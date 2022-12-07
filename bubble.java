@@ -115,7 +115,9 @@ public class Main {
 			}				
 		}
 		spc = space[1];
-		if (
+		
+		
+		//if (
 		
 		
 		
