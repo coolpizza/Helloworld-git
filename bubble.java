@@ -1,9 +1,5 @@
 
-// https://rogerdudler.github.io/git-guide/index.ko.html
-
 /*
-
-
 
 5
 5 16
@@ -118,11 +114,13 @@ public class Main {
 				imp_area = spc; // space[0]+space[1]
 			}				
 		}
-		spc = space[1];
-		
-		
-		//if (
-		
+		spc = space[1]; //5  
+		if (spc > bb[1].size) {  // left direction.
+			spc = space[0]+space[1];
+			if (spc> bb[0].size) {
+				// exit success. do not calculate.
+			}	
+		} 
 		
 		
 		
