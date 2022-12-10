@@ -8,13 +8,15 @@ Arrays.sort(array, new Comparator<int[]>() {
 			}
 		});
 
-
+-------
 Comparator<int[]> com1 = new Comparator<int[]>() {
         @Override
         public int compare(int[] o1, int[] o2) {
             return o1[0] -o2[0]; // 반대로 바꾸면 큰값부터 내림차순 정렬
         }
     };
+Arrays.sort(arr, com1);
+--------
 
 
 void strcopy(char []dst, char []src){
