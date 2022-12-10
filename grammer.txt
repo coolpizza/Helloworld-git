@@ -1,6 +1,9 @@
 
 <Java grammar>
 
+
+str.compareTo(String ddd) == 0    //   str == ddd 면 0
+------------------
 Arrays.sort(array, new Comparator<int[]>() {
 			@Override
 			public int compare(int[] a, int[] b) {
