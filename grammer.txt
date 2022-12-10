@@ -1,6 +1,21 @@
 
 <Java grammar>
 
+Arrays.sort(array, new Comparator<int[]>() {
+			@Override
+			public int compare(int[] a, int[] b) {
+				return (a[1] <= b[1]) ? -1 : 1;
+			}
+		});
+
+
+Comparator<int[]> com1 = new Comparator<int[]>() {
+        @Override
+        public int compare(int[] o1, int[] o2) {
+            return o1[0] -o2[0]; // 반대로 바꾸면 큰값부터 내림차순 정렬
+        }
+    };
+
 
 void strcopy(char []dst, char []src){
         dst = new char[src.length];
