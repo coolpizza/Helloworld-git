@@ -1,2 +1,8 @@
 <정올1083:숫자박스>
 http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=363&sca=6030
+
+<백준2606:바이러스>  // DFS/BFS
+https://www.acmicpc.net/problem/2606
+
+<정올1175:주사위던지기2>
+http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=458&sca=2080
