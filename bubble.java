@@ -13,6 +13,7 @@
 플레이어가 출발했을 때 탈출이 불가능한 공간 크기의 총 합
 
 
+
 */
 
 import java.util.Scanner;
