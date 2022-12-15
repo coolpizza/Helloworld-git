@@ -31,15 +31,33 @@
 
 
 import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 	int N;//제품 수
+	
+	/*
 	public class st{
 		int X, ID;
 		st(int X, int ID){
 			this.X=X; this.ID=ID;
 		}
 	}
+	*/
+	
+	public class st implements Comparable <st> {
+		int X, ID;
+		st(int X, int ID){
+			this.X=X; this.ID=ID;
+		}
+		@Override
+		public int compareTo(st other) {
+			return this.X-other.X;
+		}
+		
+	}
+	
+	
 	st A[] = new st[50010];
 	
 	st tmp[] = new st[50010];
@@ -59,43 +77,22 @@ public class Main {
 		}
 	}
 	
-	public void new_ID() {
-		for (int i=0; i < N; i++) {
-			int ni = A[i].ID % 50000;
-			if (check[ni] == 0) {
-				max_id_cnt++;
-				check[ni] = A[i].ID;
-				//A[i].ID = ni;
-
-			}				
-			System.out.println("--> ni :"+ni+ ", max_id_cnt :"+max_id_cnt + " i = "+i);
-
-		}				
-	}	
-		
 	public void new_id(){
 		for(int i=0;i<N;i++){
 			int ni = A[i].ID % 50000;
-			//for(int j=0;j<1;j++){
-				int j =0;
+			for(int j=0;j<50000;j++){
 				if(check[ni] == 0){
 					max_id_cnt++;
 					check[ni] = A[i].ID;
 					A[i].ID = ni;
-					System.out.println("---- ni :"+ni+ ", max_id_cnt :"+max_id_cnt + " j = "+j);
-
-					//break;
+					break;
 				}
-				//else if(check[ni] == A[i].ID){
-				//	A[i].ID = ni;
-				//	System.out.println("==== ni :"+ni+ ", max_id_cnt :"+max_id_cnt + " j = "+j);
-					//break;
-				//}
-				//ni = (ni + 1) % 50000;
-				//System.out.println("++++ ni :"+ni+ ", max_id_cnt :"+max_id_cnt + " j = "+j);
-			//}
-			//System.out.println("A["+i+"].ID="+A[i].ID);
-
+				else if(check[ni] == A[i].ID){
+					A[i].ID = ni;
+					break;
+				}
+				ni = (ni + 1) % 50000;
+			}
 		}
 	}
 	
@@ -115,10 +112,13 @@ public class Main {
 	public int solve(){
 		int i, j, cnt = 0, min = Integer.MAX_VALUE;
 		
-		new_ID();
-		//new_id();
-		sort(0, N-1);
+		new_id();
+		
+		//sort(0, N-1);
+		Arrays.sort(A, 0, N);
+		
 		for(i=0;i<50000;i++) check[i] = 0;
+		
 		i=j=0;
 		for(;;){
 			while((i<N) && (max_id_cnt > cnt)){
