@@ -1,6 +1,16 @@
 
 <Java grammar>
 
+static meet [] mt = new meet[100];
+Q queue[] = new Q[100*100*100];
+...
+
+mt[i] = new meet(num, start, end);  // 이렇게 입력해야 함. 
+
+//mt[i].num = num;  // --> 이렇게 입력하면 에러남.
+			
+queue[wp++] = new Q(0, 0);
+
 
 str.compareTo(String ddd) == 0    //   str == ddd 면 0
 ------------------
