@@ -56,7 +56,7 @@ public class Main {
 	int queue[];
 	int wp, rp;
 	void push(int n, int t){
-		if(visit[n] <= t) return;
+		if(visit[n] <= t) return;  // t 보다 방문한 쪽이 저렴하면 t로 대체.
 		visit[n] = t; queue[wp++] = n;
 	}
 	int front(){ return queue[rp];}
