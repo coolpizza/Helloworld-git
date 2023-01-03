@@ -1,0 +1,38 @@
+
+도로건설  (1)
+물류창고 (1)
+샘플제품사진
+셀프살균케어
+신도시
+인기투표
+장기자랑
+재고정리
+해커대회
+
+서비스시간
+
+숫자구술
+http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=4300&sca=30
+
+버스갈아타기
+http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=1839&sca=3040
+
+자동차정비
+http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=763&sca=4080
+
+그리디모음
+https://www.acmicpc.net/workbook/view/4380
+
+숨바꼭질 : bfs
+https://www.acmicpc.net/problem/13549
+-> https://velog.io/@wonjwi/%EB%B0%B1%EC%A4%80-13549%EB%B2%88-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%883
+->https://jdselectron.tistory.com/58
+->https://luv-n-interest.tistory.com/1286
+
+옥토끼는 통신교육을 풀어라!!
+https://www.acmicpc.net/problem/17383
+-> https://m.blog.naver.com/hongjg3229/221723151280 (풀이)
+-> https://dlwnsdud205.tistory.com/269  (풀이)
+
+-> https://github.com/devxb/JJUNalgo
+-> https://marades.tistory.com/7 (파라메트릭 서치)
