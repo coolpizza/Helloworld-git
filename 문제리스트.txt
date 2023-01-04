@@ -44,3 +44,7 @@ https://www.acmicpc.net/problem/17383
 <흙길보수하기>
 https://www.acmicpc.net/problem/1911
 ->https://zzang9ha.tistory.com/174
+
+<자동차 경주대회>
+http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=763&sca=4080
+https://saecom-dalcom.tistory.com/2
