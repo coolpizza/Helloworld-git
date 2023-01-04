@@ -12,8 +12,8 @@ https://school.programmers.co.kr/learn/courses/30/lessons/12980?language=java
 ->
 https://velog.io/@hyeon930/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%A0%90%ED%94%84%EC%99%80-%EC%88%9C%EA%B0%84-%EC%9D%B4%EB%8F%99-Java
 
-<백준소스 모음>
-https://github.com/devxb/JJUNalgo
+<백준인기문제집>
+https://www.acmicpc.net/workbook/top/1
 
 숫자구술
 http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=4300&sca=30
@@ -40,3 +40,7 @@ https://www.acmicpc.net/problem/17383
 
 -> https://github.com/devxb/JJUNalgo
 -> https://marades.tistory.com/7 (파라메트릭 서치)
+
+<흙길보수하기>
+https://www.acmicpc.net/problem/1911
+->https://zzang9ha.tistory.com/174
