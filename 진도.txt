@@ -1,35 +1,21 @@
 
-도로건설  (1)
-물류창고 (1)
-샘플제품사진
-셀프살균케어
-신도시
-인기투표
-장기자랑
-재고정리
-해커대회
+-도로건설  (1)
+-물류창고 (1)
+-샘플제품사진
+-셀프살균케어
+-신도시
+-인기투표
+-장기자랑
+-재고정리
+-해커대회
+-흙길보수 1(배열)/2(클래스) (1)
 
-서비스시간
 
-숫자구술
-http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=4300&sca=30
+<답을 찾아야 하는 것 리스트>
 
-버스갈아타기
-http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=1839&sca=3040
-
-자동차정비
-http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=763&sca=4080
-
-그리디모음
-https://www.acmicpc.net/workbook/view/4380
-
-숨바꼭질 :  DP?
-https://www.acmicpc.net/problem/13549
-
-옥토끼는 통신교육을 풀어라!!
-https://www.acmicpc.net/problem/17383
--> https://m.blog.naver.com/hongjg3229/221723151280 (풀이)
--> https://dlwnsdud205.tistory.com/269  (풀이)
-
--> https://github.com/devxb/JJUNalgo
--> https://marades.tistory.com/7 (파라메트릭 서치)
+-서비스시간
+ (손님의 도착시간과 서비스 소요시간을 합쳐서 종료시간 및 각 부스별 처리 인원을 구하는 문제)
+-IOT서비스시간
+-지도에서 강수량
+-도형의 내외 구분
+-도로로 구분된 마을에서 소속 여부 구분
