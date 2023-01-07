@@ -30,7 +30,7 @@ public class Main {
 */
 
 
-	static maxMarbleSum(int val) {
+	static boolean maxMarbleSum(int val) {
 		int cnt = 1;
 		int sum = 0;
 		for (int i = 0; i < N; i++) {
@@ -92,6 +92,8 @@ public class Main {
 		}
 
 		System.out.println("high : "+high);
+		System.out.println("low : "+low);
+
 	}
 	
 	
