@@ -92,10 +92,43 @@ public class Main {
 		}
 
 		System.out.println("high : "+high);
-		System.out.println("low : "+low);
+
+		int cnt = 0, sum = 0, group = 1;
+		ArrayList <Integer> ans = new ArrayList<>();
+		
+		for (int i = 0; i < N; ++i) {
+			sum += marbleNum[i];
+			if (sum > high) {
+				ans.add(cnt);
+				sum = marbleNum[i];
+				cnt = 0;
+				++group;
+			}
+			++cnt;
+		}
+		ans.add(cnt);
+		int pos = ans.size() - 1;
+		int temp;
+		
+		while (group < M) {
+			if (ans.get(pos) == 1) {
+				--pos;
+			}
+			else {
+			//	--ans[pos];
+			temp = ans.get(pos);
+			temp++;
+			ans.add(pos,temp);
+			
+				ans.add(1);
+				++group;
+			}
+		}
+		for (int val : ans) {
+			//cout << val << " ";
+			System.out.printf("%d ",val);
+		}
 
 	}
-	
-	
 	
 }
