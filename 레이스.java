@@ -4,6 +4,9 @@
 https://www.acmicpc.net/problem/1508
 
 https://velog.io/@pppp0722/%EB%B0%B1%EC%A4%80-%EA%B3%A8%EB%93%9C1-1508-%EB%A0%88%EC%9D%B4%EC%8A%A4-Java
+https://rccode.tistory.com/254
+https://velog.io/@chang626/1508-%EB%A0%88%EC%9D%B4%EC%8A%A4
+
 
 세준이는 세준항공으로 돈을 무지막지하게 번 뒤, 레이스 대회를 개최했다. 레이스 트랙은 길이가 N인 직선이다.
 세준이는 심판 M명을 적절한 곳에 배치시키려고 한다. 심판은 아무 곳에나 배치시킬 수 있지 않다. 심판은 미리 정해진 K개의 곳에만 위치할 수 있다.
