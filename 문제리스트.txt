@@ -48,3 +48,21 @@ https://www.acmicpc.net/problem/1911
 <자동차 경주대회>
 http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=763&sca=4080
 https://saecom-dalcom.tistory.com/2
+
+
+백준 시간관리 1263
+https://www.acmicpc.net/problem/1263
+https://developer-ellen.tistory.com/88
+https://velog.io/@hyuntall/%EB%B0%B1%EC%A4%80-1263%EB%B2%88-%EC%8B%9C%EA%B0%84-%EA%B4%80%EB%A6%AC-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4
+
+
+백준 회의실 배정 1931
+https://www.acmicpc.net/problem/1931
+https://st-lab.tistory.com/145
+https://latte-is-horse.tistory.com/204
+
+백준 안전영역 2468
+https://www.acmicpc.net/problem/2468
+https://youngest-programming.tistory.com/500
+https://loosie.tistory.com/297
+
