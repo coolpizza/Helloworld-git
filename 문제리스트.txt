@@ -81,3 +81,7 @@ https://jaimemin.tistory.com/1059
 
 <조합구현하기>
 https://yabmoons.tistory.com/99
+
+<해쉬>
+https://zoosso.tistory.com/948
+https://stackoverflow.com/questions/10696223/reason-for-the-number-5381-in-the-djb-hash-function
