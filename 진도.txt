@@ -34,3 +34,14 @@
 (2) string 비교식 숙지할 것
 (3) 소팅 방식 2가지 (class에 포함, 배열로 그냥 진행)
 (4) break / continue 사용법 비교 !!
+
+
+5
+messi ronaldo messy suarez ronaldu
+6
+messy 3
+suarez 3
+ronaldo 1
+messi 1
+ronaldoo 10
+messi 1
