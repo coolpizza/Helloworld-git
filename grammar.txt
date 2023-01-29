@@ -1,5 +1,41 @@
 
 <Java grammar>
+String arr[] = {"apple","orange","banana","pear","peach","melon"};
+        Arrays.sort(arr);
+        
+		System.out.print("Before : ");
+        for (String i : arr) {
+            System.out.print("[ "+i+" ] ");
+        }
+		
+		System.out.print("After : ");
+		Arrays.sort(arr, Collections.reverseOrder());
+		for (String i : arr) {
+            System.out.print("[ "+i+" ] ");
+        }
+----------------------------------------------
+// 아래 방법을 쓰면 class 안에 compareTo를 넣지 않고 sort시에 바로 Comparator로 진행.
+class Edge {
+    int s, e, cost;
+
+    Edge(int s, int e, int cost) {
+        this.s = s;
+        this.e = e;
+        this.cost = cost;
+    }
+}
+
+ArrayList<Edge> edges = new ArrayList<>();
+
+edges.sort(new Comparator<Edge>() {
+            @Override
+            public int compare(Edge o1, Edge o2) {
+                return Integer.compare(o1.cost, o2.cost);
+            }
+        });
+
+
+---------------------------------------------------------
 
 static meet [] mt = new meet[100];
 Q queue[] = new Q[100*100*100];
