@@ -59,11 +59,21 @@
 
    int []stack = new int [80000];
 
+     int sp= 0;
+
        for (int i=0; i < N;i++) {
+         
+            while(sp>0)  {
+                if (  H[i]< stack[sp] ) {
 
+                      break;
 
-
-
+                }
+                sp--;                    
+             }
+         
+             ++sp;
+            
 
        }                  
 
