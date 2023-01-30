@@ -38,9 +38,11 @@ public class Main {
 					break;
 				}
 				sp--;
-			}
+			}			
 			sum += sp;
 			stack[++sp] = H[i];
+			System.out.printf("i:%d, sum : %d\n", i,sum);
+			System.out.printf("------------\n");
 			
 
 		}
