@@ -1,0 +1,43 @@
+
+	class planning implement Comparable <planning> {
+
+	   int start;
+	   int end;
+  
+               planning(int start, int end) {
+                  this.start = start;
+                  this.end = end; 
+               }
+
+              @Override 
+               public int compareTo(planning o) {
+	      if (this.end < o.end) return -1;
+                  else return 1;
+               }              
+           }
+
+          Array.sort(A, 0)  ???
+
+        
+
+time[x][0] // start
+time[x][1] // end
+
+Comparator <int> 
+          
+
+        Arrays.sort(time, new Comparator<int[]>() {
+              @Override
+               public int compare(int [] o1, int []o2) {
+                     if (o1[1] == o2[1]) {
+                          return o1[0]-o2[0];
+                     }
+                     return o1[1]-o2[1];
+                }
+
+        }
+
+
+
+
+
