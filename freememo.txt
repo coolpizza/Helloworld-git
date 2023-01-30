@@ -1,41 +1,107 @@
 
-	class planning implement Comparable <planning> {
+	
 
-	   int start;
-	   int end;
-  
-               planning(int start, int end) {
-                  this.start = start;
-                  this.end = end; 
-               }
 
-              @Override 
-               public int compareTo(planning o) {
-	      if (this.end < o.end) return -1;
-                  else return 1;
-               }              
-           }
 
-          Array.sort(A, 0)  ???
-
-        
-
-time[x][0] // start
-time[x][1] // end
-
-Comparator <int> 
-          
-
-        Arrays.sort(time, new Comparator<int[]>() {
-              @Override
-               public int compare(int [] o1, int []o2) {
-                     if (o1[1] == o2[1]) {
-                          return o1[0]-o2[0];
-                     }
-                     return o1[1]-o2[1];
-                }
-
+    class meet implements Comparable <meet> {
+        int num;
+        int start;
+        int end;
+        meet (int num, int start, int end) {
+             this.num = num; 
+             this.start = start;
+             this.end = end;
         }
+        @Override
+        public int  compareTo(meet o) {
+             if (this.end == o.end) {
+                 return this.start-o.start;
+             } else {
+              return this.end-o.end;
+        }
+      }
+
+      ArrayList <meet> arlist = new ArrayList<>();
+       meet []mt = new meet[100];
+
+      arlist.add(new meet(a, b, c));
+      mt[i] = new meet(a,b,c));
+     
+----------------------------------------------------------------
+<2A<3B>CE>
+-->ABBBCEABBBCE
+           char []loop;
+                 loop  =     sc.next().toCharArray();
+                 analysisLoop(char []a, int s) {
+                      
+                 int x = s;
+                 int count ; 
+                 count  = a[s+1] - "0";      
+                 
+
+                 while (count-->0) {
+                            x  = s+2;
+
+                         while ( a[x]  != ">" )   {
+                              if ( a[x] == "<") 
+                                   x = analysisLoop(a, x);
+                              else
+                                      print (a[x]);
+                              x++;
+                          
+ 
+                         }
+ 
+                 }
+----------------------------------------------------------------------------
+
+ int N, int []H = new int [80000];
+
+   int []stack = new int [80000];
+
+       for (int i=0; i < N;i++) {
+
+
+
+
+
+       }                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+                 
+             
+
+                         
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
