@@ -176,67 +176,77 @@ road construct  (도로건설)
  
                    if (nr > max || nr < 0 || nc > max || nc< 0) continue;
                    /// 여기 부분이 핵심 !!
-                    visit[nr][nc] > visit[out.r][out.c] + map..
-
-
-
-
-
-
+                   if (visit[nr][nc] > visit[out.r][out.c] + map[nr][nc] - '0') {
+                      visit[nr][nc] =  visit[out.r][out.c] + map[nr][nc] - '0');
+                      queue[wp++] = new Q(nr, nc);
+                   
+                   }
          } 
         
+-------------------***********************************************
+뇌를 이기자 .......이번이 인생의 숙제를 해소할 절호의 기회이다. 
+*******************#################################
+
+  time[i][0]   // 시작시간
+  time[i][1]   // 종료시간
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+  //종료시간 기준으로 하되 동일하면 시작시간을 기준으로 한다.
  
+ Arrays.sort(time , new Comparator <int[]>() {
 
+    @Override 
+    public int compare(int[]o1, int []o2) { 
+        if (o1[1] == o2[1])  {  
+               return o1[0]-o2[0];
+        }
+        return o1[1]-o2[1];   
+    }
+  });
 
+  // 여기까지 왔으면 sorting은 된 상태. 
+
+   count = prev_end_time = 0;     
+
+  for (int i=0; i < N; i++) {
+      if (prev_end_time <= time[i][0] ) {
+             prev_end_time = time[i][1];
    
+           count++;
+      }        
+  }       
+
+------------------------------
+===================
+필요한 널빤지의 최소 갯수 구하기. 
+
+3 3  (웅덩이 개수, 널빤지 길이)
+1 6   (웅덩이 시작, 끝)
+13 17
+8 12
+
+   arr[i][0] = 널빤지 시작.
+   arr[i][1] = 널빤지 끝.
+
+   |--------| |---------| |----------|
+  1         6 8       12 13        17 
+   ###
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-                 
-             
-
-                         
-                     
+    	int nulpan = 0;	// 필요한 널빤지의 개수
+	int range = 0;	// 널빤지를 물웅덮이에 덮었을때, 덮을 수 있는 범위
+		
+	for(int i=0; i<N; i++) {
+	   if(arr[i][0] > range)
+	      range = arr[i][0];
+	   if(arr[i][1] >= range) {
+	      while(arr[i][1] > range) {
+	         range += L;
+	         nulpan ++;
+	      }
+	   }
+	}
+=========================================                  
 
 
 
