@@ -50,7 +50,8 @@ public class Main {
 		int max=t[0].high;
 		for (int i = 1; i < t.length; i++) {
 			if(t[i].low>max) {
-				max=t[i].low;
+				//max=t[i].low;
+				max=t[i].high;
 				cnt+=1;
 			}
 		}
