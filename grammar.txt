@@ -14,6 +14,29 @@ String arr[] = {"apple","orange","banana","pear","peach","melon"};
             System.out.print("[ "+i+" ] ");
         }
 ----------------------------------------------
+public class jungol_1370 {
+	static class meet implements Comparable <meet> {
+		int num;
+		int start;
+		int end;
+		meet(int num, int start, int end) {
+			this.num = num;
+			this.start = start;
+			this.end = end;	
+			
+		}	
+		
+		@Override 
+		public int compareTo(meet o) {
+			return this.end - o.end;
+			
+		}
+	}
+	
+	static ArrayList <meet> meeting = new ArrayList<>();
+	static meet [] mt = new meet[100];
+
+----------------------------------------------
 // 아래 방법을 쓰면 class 안에 compareTo를 넣지 않고 sort시에 바로 Comparator로 진행.
 class Edge {
     int s, e, cost;
@@ -56,7 +79,7 @@ Arrays.sort(array, new Comparator<int[]>() {
 			}
 		});
 
--------
+-----------------
 Comparator<int[]> com1 = new Comparator<int[]>() {
         @Override
         public int compare(int[] o1, int[] o2) {
@@ -64,9 +87,19 @@ Comparator<int[]> com1 = new Comparator<int[]>() {
         }
     };
 Arrays.sort(arr, com1);
---------
 
+---------------------------------------------------
+Arrays.sort(time , new Comparator <int[]>() {
 
+    @Override 
+    public int compare(int[]o1, int []o2) { 
+        if (o1[1] == o2[1])  {  
+               return o1[0]-o2[0];
+        }
+        return o1[1]-o2[1];   
+    }
+  });
+------------------------------------------------
 void strcopy(char []dst, char []src){
         dst = new char[src.length];
         for(int i=0;i<src.length;i++) dst[i]=src[i];

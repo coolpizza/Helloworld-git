@@ -310,9 +310,71 @@ public class Main {
 -------------------------------------------------------------------
 
 
+for (r = minr; r <= maxr; r++){
+   for (c = minc; c <= maxc; c++){
+      check[r][c]++;
+   }
+}             
+
+------------------------------------------------
 
 
-             
+a,b, c 방문을 dfs로 구현하기
+
+pos[1~3]
+visit[1~3]
+
+void dfs(int pos) {
+
+   if (visit[pos]==1) return;
+   visit[pos] =1;
+   System.out.println("position:"+pos);
+   dfs (pos+1);
+
+}
+-------------------------------------------
+
+impot java.util.*;
+
+  mybox[i][0] = 1;   // start
+  mybox[i][1] = 4;   // end
+
+  Arrays.sort(mybox, new Comparator <int[]>() {
+   @Override
+   public int compare(int a[], int b[]) {
+       return a[1]-a[1];
+   }
+  });
+---------------------
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
