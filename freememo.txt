@@ -347,14 +347,25 @@ impot java.util.*;
   });
 ---------------------
 
+int siz[x][0]; // start
+    siz[x][1]; // end
 
 
+Arrays.sort(siz, new Comparator<int []>(){
+	@Override
+            public int compare(int []a, int []b) {
+                 if (a[0]==b[0]) {
+                      return Integer.compare(a[1], b[1]);
+                 return Integer.compare(a[0],b[0]);
+            }
+});
+           
 
-
-
-
-
+ 
+ 
   
+
+
 
 
 
