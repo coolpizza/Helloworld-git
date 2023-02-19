@@ -65,6 +65,8 @@ Q queue[] = new Q[100*100*100];
 
 mt[i] = new meet(num, start, end);  // 이렇게 입력해야 함. 
 
+Arrays.sort(mt,0,N);  // 이렇게 안하면 Collections를 써야 함. 
+
 //mt[i].num = num;  // --> 이렇게 입력하면 에러남.
 			
 queue[wp++] = new Q(0, 0);
@@ -99,6 +101,16 @@ Arrays.sort(time , new Comparator <int[]>() {
         return o1[1]-o2[1];   
     }
   });
+-------------------------------------------------
+
+int[][] work = new int[n][n];
+work[i][0] = 5
+work[i][1] = 20
+....
+
+Arrays.sort(work, (o1, o2) -> o2[1] - o1[1]); // 큰값부터 작은값으로 내림차순
+
+
 ------------------------------------------------
 void strcopy(char []dst, char []src){
         dst = new char[src.length];
