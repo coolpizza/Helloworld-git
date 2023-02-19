@@ -10,6 +10,7 @@ import java.util.*;
 
 
 public class Main {
+    static int iter = 0;
 
     public static void combination(int[] arr, boolean[] visited, int start, int depth, int r){
         if(depth == r){
@@ -17,6 +18,7 @@ public class Main {
                 if(visited[i]) System.out.print(arr[i]+" ");
             }
             System.out.println();
+			System.out.printf("iter:%d\n",iter++);
             return;
         }
         for(int i=start; i<arr.length; i++){

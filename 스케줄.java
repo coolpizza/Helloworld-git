@@ -101,9 +101,53 @@ public class Main {
 		for (int i=0; i < K; i++) {
 			System.out.printf("%d %d %d \n", pl[i].start, pl[i].end, pl[i].cost);
 		}
+	 
+		calc();	
+		
+	}
+	
+	/*
+	   - K개의 대여 일정에서 맞는 조합을 고른다.
+	   - 조합의 갯수는 1개~K개 까지 있다
+	   - 이중 스케줄에 가능한 일정만 선별하여 cost의 합을 구한다
+	   - max 값을 갱신
+	   - 조합이 끝날 때까지 반복
+	
+	*/
+	
+	// 모르면 손이 가지 않을테니 생각을 많이 하고 패턴은 외워놔야 한다. 
+	
+	boolean visit[] = new boolean[10];  // K
+	
+	void dfs(int begin) {
+		visit[begin] = true;
+		if (visit[begin] == false) return;
+	
+		
+	
 		
 		
 	}
+	
+	void calc() {
+	   int max = 0;
+	// 1개 일정
+	   
+	   for (int i=0; i < K; i++) { 
+	     if (pl[i].cost > max) max = pl[i].cost;
+	   }
+	   System.out.printf("Max in 1 item : %d \n", max);
+
+    // 2개 일정    4C2, (kC2)
+	  dfs(0);	
+	
+
+    // 3개 일정
+
+    // 4개 일정  (K개 일정)   	
+		
+	}
+	
 	
 	
 	public static void main(String[] args) {
