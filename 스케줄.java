@@ -65,14 +65,15 @@ public class Main {
 	}
 
 
-	int N;
-	int M;
-	int K;
+	static int N;
+	static int M;
+	static int K;
 	int s;
 	int e;
 	int c;
 
-	planning pl[] = new planning[100];
+	static planning pl[] = new planning[100];
+	//static int arr[] = {20,30,50,40};
 
 	void input() {
 		Scanner sc = new Scanner(System.in);
@@ -80,14 +81,15 @@ public class Main {
 		N = sc.nextInt();
 		M = sc.nextInt();
 		K = sc.nextInt();
-		
-		for (int i = 0; i < K; i++) {
+		int i;
+		for (i = 0; i < K; i++) {
 			
 			s = sc.nextInt();
 			e = sc.nextInt();
 			c = sc.nextInt();
 			pl[i] = new planning(s, e, c);
 		}		
+		pl[i+1]= new planning(0, 0, 0); // 끝부분의 NPE를 막기위해.
 		
 	}
 	
@@ -116,21 +118,58 @@ public class Main {
 	*/
 	
 	// 모르면 손이 가지 않을테니 생각을 많이 하고 패턴은 외워놔야 한다. 
+	/*
+		5 2 4
+		1 2 20
+		2 3 50
+		3 5 30
+		4 4 40
+		->
+		90
 	
-	boolean visit[] = new boolean[10];  // K
+	*/
 	
-	void dfs(int begin) {
-		visit[begin] = true;
-		if (visit[begin] == false) return;
+	static boolean visited[] = new boolean[10];  // K	
+	static int max = 0;
 	
-		
+    public static void dfs(int start, int depth, int r){
+		if(depth == r){
+			int sum = 0;			
+            //for(int i=0; i<arr.length; i++){
+			for(int i=0; i<K; i++){
+                //if(visited[i]) System.out.print(arr[i]+" ");
+				if (visited[i]) {
+					// 여기에서 이전일정의 끝보다 다음 일정의 시작이 앞에오는 것은 제외.
+					if (r>=2) {
+						if (pl[i].end <= pl[i+1].start) {
+							System.out.print(pl[i].cost+" ");
+							sum +=pl[i].cost;
+						}
+					} else {
+						System.out.print(pl[i].cost+" ");
+						sum +=pl[i].cost;						
+					}
+
+				}		
+			}
+			if (sum>max) max=sum;
+			System.out.printf("local sum :%d, max:%d \n", sum, max);
+            System.out.println();
+			
+			
+            return;
+        }
+        //for(int i=start; i<arr.length; i++){
+		for(int i=start; i<K; i++){
+            if(!visited[i]){
+                visited[i] = true;
+                dfs(i+1, depth+1, r);
+                visited[i] = false;
+            }
+        }
+    }
 	
-		
-		
-	}
-	
-	void calc() {
-	   int max = 0;
+	void calc() {	   
 	// 1개 일정
 	   
 	   for (int i=0; i < K; i++) { 
@@ -139,8 +178,14 @@ public class Main {
 	   System.out.printf("Max in 1 item : %d \n", max);
 
     // 2개 일정    4C2, (kC2)
-	  dfs(0);	
-	
+	   //dfs(0,0,2);  // start, depth, r	
+	   
+	   //System.out.printf("arr.length:%d\n", arr.length);
+	   // 2개 이상의 일정부터는 다음일정의 시작이 먼저 일정보다 앞에 오면 안된다. 
+	   
+	   for (int i=2; i <=K; i++) {
+	      dfs(0, 0, i);
+       }  
 
     // 3개 일정
 
