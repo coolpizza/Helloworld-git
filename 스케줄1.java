@@ -73,7 +73,7 @@ public class Main {
 	int c;
 
 	static planning pl[] = new planning[100];
-	static char arr_c[] = {'a','b','c','d'};
+	//static int arr[] = {20,30,50,40};
 
 	void input() {
 		Scanner sc = new Scanner(System.in);
@@ -89,8 +89,7 @@ public class Main {
 			c = sc.nextInt();
 			pl[i] = new planning(s, e, c);
 		}		
-		pl[i]= new planning(0, 0, 0); // 끝부분의 NPE를 막기위해.
-		System.out.printf("i:%d\n",i);
+		pl[i+1]= new planning(0, 0, 0); // 끝부분의 NPE를 막기위해.
 		
 	}
 	
@@ -140,26 +139,16 @@ public class Main {
 			for(int i=0; i<K; i++){
                 //if(visited[i]) System.out.print(arr[i]+" ");
 				if (visited[i]) {
-					 //여기에서 이전일정의 끝보다 다음 일정의 시작이 앞에오는 것은 제외.
-					 System.out.print(arr_c[i]+" ");
-					/*
+					// 여기에서 이전일정의 끝보다 다음 일정의 시작이 앞에오는 것은 제외.
 					if (r>=2) {
 						if (pl[i].end <= pl[i+1].start) {
 							System.out.print(pl[i].cost+" ");
 							sum +=pl[i].cost;
 						}
 					} else {
-						
 						System.out.print(pl[i].cost+" ");
 						sum +=pl[i].cost;						
-					
 					}
-					*/
-					//if (pl[i].end <= pl[i+1].start) {
-					if (pl[i].end <= pl[i].start) {
-						System.out.print(pl[i].cost+" ");
-						sum +=pl[i].cost;
-					}						
 
 				}		
 			}
@@ -194,9 +183,9 @@ public class Main {
 	   //System.out.printf("arr.length:%d\n", arr.length);
 	   // 2개 이상의 일정부터는 다음일정의 시작이 먼저 일정보다 앞에 오면 안된다. 
 	   
-	   //for (int i=2; i <=K; i++) {
-	      dfs(0, 0, 2);
-       //}  
+	   for (int i=2; i <=K; i++) {
+	      dfs(0, 0, i);
+       }  
 
     // 3개 일정
 
