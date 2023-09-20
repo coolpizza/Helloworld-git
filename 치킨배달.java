@@ -26,10 +26,20 @@ https://jaimemin.tistory.com/1059
 0 1 2 0 0
 0 0 1 0 0
 0 0 0 0 2
-
 -->
 
 5,
+
+5 3
+0 0 1 0 2
+0 0 2 0 1
+0 1 2 0 0
+2 0 1 0 0
+0 0 0 0 2
+
+-->
+
+4,
 
 
 
@@ -78,6 +88,7 @@ public class Main{
     static void dfs(int count, int idx){
         //선택한 치킨집의 갯수가 M과 같아지면 bfs
         if(count == M){
+			System.out.println(" 1.......");
             bfs();
             return;
         }
