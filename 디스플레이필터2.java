@@ -73,7 +73,8 @@ public class Main {
 		Dfs(n+1, r, p, cnt);
 	}
 ****/
-	
+
+
 	void Dfs(int s, int cnt, long mul, long sum) {
 		if (cnt !=0) {
 			long diff = Math.abs(mul - sum);
