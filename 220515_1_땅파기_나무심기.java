@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class Main {
-	// test...
+	// test....
 	
 	void solve() {
 		int N=35;   // 35 min.
