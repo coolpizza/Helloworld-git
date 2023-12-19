@@ -12,68 +12,66 @@
 
 
 */
+import java.io.*;
+import java.util.*;
+/**
+ *  BOJ 2590 색종이
+ *  https://gist.github.com/KSH-code/1003dec637b9281c88ef3f2fb162f0c5
+ https://ksh-code.tistory.com/55
+ https://yhwan.tistory.com/category/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EB%AC%B8%EC%A0%9C/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98
+ https://yhwan.tistory.com/20
+ 
+ 
+ */
+class Main{
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int d[] = new int[7];
 
-
-import java.util.Arrays;
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int[] coloredPapers = new int[7]; // Array to store the counts of each colored paper size (1 to 6)
-
-        // Read the counts of each colored paper size
-        for (int i = 1; i <= 6; i++) {
-            coloredPapers[i] = scanner.nextInt();
+        for(int i = 1; i<=6; i++){
+            d[i] = Integer.parseInt(br.readLine());
         }
 
-        // Array to store the number of boards required for each size
-        int[] boardsNeeded = new int[7];
+        int five = d[5] * 11;
+        int four = d[4] * 5;
 
-        // Size 6 x 6
-        boardsNeeded[6] = coloredPapers[6];
+        int panel = d[6] + d[5] + d[4];
+        
+        d[1] -= five;
+        d[2] -= four;
 
-        // Size 5 x 5
-        boardsNeeded[5] = coloredPapers[5];
-
-        // Size 4 x 4
-        boardsNeeded[4] = coloredPapers[4];
-        boardsNeeded[6] -= 5 * coloredPapers[4]; // Reduce size 6 x 6 boards used for size 4 x 4
-
-        // Size 3 x 3
-        boardsNeeded[3] = coloredPapers[3];
-        int size3Leftover = coloredPapers[3] % 4; // Leftover size 3 x 3 colored papers
-        if (size3Leftover > 0) {
-            boardsNeeded[6] -= (5 - size3Leftover) * 4; // Reduce size 6 x 6 boards used for leftover size 3 x 3
-            boardsNeeded[5] -= (7 - size3Leftover) * 4; // Reduce size 5 x 5 boards used for leftover size 3 x 3
-            boardsNeeded[4] -= (6 - size3Leftover) * 4; // Reduce size 4 x 4 boards used for leftover size 3 x 3
+        if(d[1] > 0 && d[2] < 0){
+            d[1] += d[2] * 4;
         }
 
-        // Size 2 x 2
-        boardsNeeded[2] = coloredPapers[2];
-        int size2Leftover = coloredPapers[2] % 9; // Leftover size 2 x 2 colored papers
-        if (size2Leftover > 0) {
-            boardsNeeded[6] -= (36 - size2Leftover) / 4; // Reduce size 6 x 6 boards used for leftover size 2 x 2
-            boardsNeeded[5] -= (20 - size2Leftover) / 4; // Reduce size 5 x 5 boards used for leftover size 2 x 2
-            boardsNeeded[4] -= (12 - size2Leftover) / 4; // Reduce size 4 x 4 boards used for leftover size 2 x 2
-            boardsNeeded[3] -= (4 - size2Leftover) / 4;  // Reduce size 3 x 3 boards used for leftover size 2 x 2
+        panel += d[3] / 4;
+        
+        int three;
+        if((three = (d[3] % 4)) > 0){
+            panel++;
+            d[2] = Math.max(d[2], 0);
+            if(d[2] >= 0){
+                d[2] -= 5 - (three-1) * 2;
+                d[1] += d[2] * 4;
+                d[1] -= 8 - three;
+            }
         }
-
-        // Size 1 x 1
-        boardsNeeded[1] = coloredPapers[1];
-        int size1Leftover = coloredPapers[1] % 36; // Leftover size 1 x 1 colored papers
-        if (size1Leftover > 0) {
-            boardsNeeded[6] -= 36 - size1Leftover; // Reduce size 6 x 6 boards used for leftover size 1 x 1
-            boardsNeeded[5] -= 20 - size1Leftover; // Reduce size 5 x 5 boards used for leftover size 1 x 1
-            boardsNeeded[4] -= 12 - size1Leftover; // Reduce size 4 x 4 boards used for leftover size 1 x 1
-            boardsNeeded[3] -= 4 - size1Leftover;  // Reduce size 3 x 3 boards used for leftover size 1 x 1
-            boardsNeeded[2] -= 1 - size1Leftover;  // Reduce size 2 x 2 boards used for leftover size 1 x 1
+        
+        if(d[2] > 0){
+            panel += d[2] / 9;
+            int two;
+            if((two = (d[2] % 9)) > 0){
+                panel++;
+                int ableone = -4 * two + 36;
+                d[1] -= ableone;
+            }
         }
+        
+        while(d[1] > 0){
+            panel++;
+            d[1] -= 36;
+        }
+        System.out.println(panel);
 
-        // Calculate the total number of boards needed
-        int totalBoards = Arrays.stream(boardsNeeded).sum();
-
-        // Print the result
-        System.out.println(totalBoards);
     }
 }
