@@ -41,6 +41,7 @@ public class Main {
 	
 	long mindiff = (long)1e6;;
 	int mincnt;
+	int totcal = 0;
 	
 	void InputData(){
 		Scanner sc = new Scanner(System.in);
@@ -74,17 +75,28 @@ public class Main {
 	}
 ****/
 
-
+// cnt --> 남겨야 하는 필터 갯수, N-cnt --> 제거해야 하는 필터 갯수
 	void Dfs(int s, int cnt, long mul, long sum) {
+		System.out.printf("enter DFS --> s:%d, cnt:%d, mul:%d, sum:%d, iter:%d \n",s,cnt,mul,sum,totcal);
 		if (cnt !=0) {
+			
 			long diff = Math.abs(mul - sum);
+			totcal++;
+			//System.out.println("s: "+s + " cnt: "+cnt+" diff: "+diff);
+			//System.out.println();
+			
 			if ((mindiff > diff) ||
 				((mindiff == diff) && (mincnt > cnt))) {
 					mindiff = diff;
 					mincnt = cnt;
+					
 			}
+			//System.out.println("mindiff: "+mindiff +" mincnt: "+mincnt +" totcl :"+ totcal);
+			//System.out.println();
 		}
 		for (int i = s; i <= N; i++) {
+			//System.out.println("i: "+i);
+			//System.out.println();
 			Dfs(i+1, cnt+1, mul*R[i], sum+P[i]);
 		}
 	}

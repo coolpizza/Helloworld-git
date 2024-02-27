@@ -63,6 +63,7 @@ public class Main {
 						//	살균범위내에 살균대상이 있을경우 카운트 증가)
 						if (si <= y[k] && y[k] <= si + h && sj <= x[k] && x[k] <= sj + w)   t++;
 					}
+					System.out.printf("h:%d, i:%d, j:%d, t:%d \n",h, i,j,t);
 					if (sol < t) sol = t;			//	현재 최대값보다 클 경우 정답 갱신
 				}
 			}
