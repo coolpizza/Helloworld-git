@@ -33,10 +33,13 @@ public class Main {
 			else{
 				pat[cnt++] = seq;
 				seq = 1;
-			}
+			}			
 		}
+		System.out.printf("1.cnt:%d, seq:%d \n", cnt, seq);
+
 		pat[cnt++] = seq;
-		
+		System.out.printf("2.cnt:%d, seq:%d \n", cnt, seq);
+
 		/*
 		if(cnt < 2){
 			for(i = 0; i < cnt; i++) max += pat[i];

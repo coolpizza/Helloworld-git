@@ -94,6 +94,11 @@ public class Main {
 				ni = (ni + 1) % 50000;
 			}
 		}
+		System.out.printf("max_id_cnt : %d \n", max_id_cnt);
+		for (int i=0; i < N; i++) {
+			System.out.printf("A[%d].ID = %d \n", i, A[i].ID);
+			
+		}
 	}
 	
 	public void sort(int s, int e){
@@ -123,17 +128,20 @@ public class Main {
 		for(;;){
 			while((i<N) && (max_id_cnt > cnt)){
 				if(check[A[i].ID]++ == 0) cnt++;
-				System.out.printf("check[A[%d].ID] : %d \n", i, check[A[i].ID]);	
+				System.out.printf("* A[%d].ID:%d,check[A[%d].ID] : %d \n",i,A[i].ID, i, check[A[i].ID]);	
 				i++;
 				
 			}
-			System.out.println(" cnt : "+cnt);
+			System.out.printf("cnt:%d, i:%d \n ",cnt,i);
 			
 			if(max_id_cnt != cnt) break;
 						
+			System.out.printf("** A[%d].ID:%d, check[A[%d].ID]:%d \n ",j, A[j].ID,j, check[A[j].ID]);			
 			while(check[A[j].ID]>1){
 				check[A[j].ID]--; j++;
+				System.out.printf("j:%d \n ",j);
 			}
+			//System.out.printf("j:%d \n ",j);
 			if(min > A[i-1].X - A[j].X) min = A[i-1].X - A[j].X;
 			cnt--; check[A[j].ID]=0; j++;
 		}
