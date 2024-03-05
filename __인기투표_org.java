@@ -109,7 +109,7 @@ public class Main {
 
 	void OutputData(){
 	   int i, j, max, maxidx;
-	   //for(i = 0; i < 3; i++){
+	   for(i = 0; i < 3; i++){
 		   max = 0; maxidx = 0;
 		   for(j = 1; j <= N; j++){
 			   if(max < sum[j]){
@@ -118,7 +118,7 @@ public class Main {
 		   }
 		   System.out.println(str[maxidx - 1] + " " + max);
 		   sum[maxidx] = 0;
-	   //}
+	   }
 	}
 
 	public static void main(String[] args){
