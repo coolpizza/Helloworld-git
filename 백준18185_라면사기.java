@@ -19,40 +19,6 @@ https://hsdevelopment.tistory.com/540
 
 
 */
-/*
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] factories = new int[N];
-
-        for (int i = 0; i < N; i++) {
-            factories[i] = sc.nextInt();
-        }
-
-        int totalCost = 0;
-
-        for (int i = 0; i < N; i++) {
-            if (i >= 2 && factories[i - 2] > factories[i - 1]) {
-                // Buy 3 noodles individually
-                totalCost += factories[i];
-            } else if (i >= 1 && factories[i - 1] > factories[i]) {
-                // Buy 2 noodles (i and i-1) together
-                totalCost += factories[i];
-                totalCost += factories[i - 1];
-                i++; // Skip the next factory
-            } else {
-                // Buy 1 noodle individually
-                totalCost += factories[i];
-            }
-        }
-
-        System.out.println(totalCost);
-    }
-}
-*/
 
 import java.util.Scanner;
 
