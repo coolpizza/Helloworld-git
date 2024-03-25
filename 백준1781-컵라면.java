@@ -60,23 +60,37 @@ public class p1781 {
 			int deadLine = Integer.valueOf(st.nextToken());
 			int cupNoodleCount = Integer.valueOf(st.nextToken());
 			questionArr[i] = new Question(deadLine, cupNoodleCount);
-//			pq.offer(new Question(deadLine, cupNoodleCount));
 		}
 		
 		long nowCupNoodleCount = 0;
-		Arrays.parallelSort(questionArr);	// Comparable interface overriding한 조건에 따라 정렬
+		
+		//Arrays.parallelSort(questionArr);	// Comparable interface overriding한 조건에 따라 정렬
+		
+		Arrays.sort(questionArr);	// Comparable interface overriding한 조건에 따라 정렬
+		System.out.println();
+		for(Question question : questionArr) {
+			
+			System.out.printf("%d %d \n", question.deadLine, question.cupNoodleCount);
+			
+		}
+		System.out.println();
 		
 		// O(n)
 		for(Question question : questionArr) {
 			int size = pq.size();
+			System.out.printf("pq.size : %d\n", size);
+			
 			if(size < question.deadLine) {
 				pq.offer(question.cupNoodleCount);
+				System.out.printf("offer: %d\n",question.cupNoodleCount);
 			}
 			else if(size == question.deadLine) {
 				int noodleCount = pq.peek();
-				if(noodleCount < question.cupNoodleCount) {
+				System.out.printf("noodleCount: %d\n", noodleCount);
+				if(noodleCount < question.cupNoodleCount) {					
 					pq.poll();
 					pq.offer(question.cupNoodleCount);
+					System.out.printf("Replace to: %d\n", question.cupNoodleCount);
 				}
 			}
 		}

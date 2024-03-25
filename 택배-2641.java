@@ -7,7 +7,7 @@ import java.util.Scanner;
  * 그리디, 2641 택배
  * 
  * @author whitebeard
- *
+ *https://www.acmicpc.net/problem/8980
  http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=1903&sca=3050
  https://eine.tistory.com/entry/KOI-2013-%EC%B4%88%EB%93%B1%EB%B6%80-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4
  https://118k.tistory.com/337
