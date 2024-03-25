@@ -11,6 +11,14 @@ https://hsdevelopment.tistory.com/540
 -->
 6
 
+3
+1 2 1
+--> 10
+
+3
+1 1 1
+-->7
+
 
 5
 1 1 1 0 2
@@ -37,29 +45,45 @@ public class Main {
 		for (int i = 0; i < N; i++) {
 			if (factories[i + 1] > factories[i + 2]) {
 				int two = Math.min(factories[i], factories[i + 1] - factories[i + 2]);
+				System.out.printf("--i:%d, two:%d, fac(%d):%d,fac(%d):%d,fac(%d):%d \n", 
+				                 i,two,i,factories[i],i+1,factories[i+1],i+2,factories[i+2]);
+				
 				totalCost += 5 * two;
 				factories[i] -= two;
 				factories[i + 1] -= two;
 	 
 				int three = Math.min(factories[i], Math.min(factories[i + 1], factories[i + 2]));
 				totalCost += 7 * three;
+				
+				System.out.printf("--i:%d, three:%d, fac(%d):%d,fac(%d):%d,fac(%d):%d \n", 
+				                 i,three,i,factories[i],i+1,factories[i+1],i+2,factories[i+2]);
 				factories[i] -= three;
 				factories[i + 1] -= three;
 				factories[i + 2] -= three;
 			}
 			else {
 				int three = Math.min(factories[i], Math.min(factories[i + 1], factories[i + 2]));
+				
+				System.out.printf("++ i:%d, three:%d, fac(%d):%d,fac(%d):%d,fac(%d):%d \n", 
+				                 i,three,i,factories[i],i+1,factories[i+1],i+2,factories[i+2]);
+				
+				
 				totalCost += 7 * three;
 				factories[i] -= three;
 				factories[i + 1] -= three;
 				factories[i + 2] -= three;
 	 
 				int two = Math.min(factories[i], factories[i + 1]);
+				System.out.printf("++ i:%d, two:%d, fac(%d):%d,fac(%d):%d \n", 
+				                 i,two,i,factories[i],i+1,factories[i+1]);
+				
+				
 				totalCost += 5 * two;
 				factories[i] -= two;
 				factories[i + 1] -= two;
 			}    
 			totalCost += 3 * factories[i]; 
+			System.out.printf("--------------------------------\n");
 		}		
 		System.out.println(totalCost);
 	}
