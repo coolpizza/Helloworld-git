@@ -23,6 +23,8 @@ https://fbtmdwhd33.tistory.com/60
 
 14
 
+dp[아이템 index][무게] = 가치
+
 */
 
 import java.util.*;
@@ -45,15 +47,17 @@ public class Baekjoon_12865 {
             w[i]= sc.nextInt();
             v[i] = sc.nextInt();
         }
-						
+        System.out.printf("# dp[%d][%d]=%d \n", 0,0, dp[0][0]);
+		
         for(int i=1; i<=N; i++) {
             for(int j=1; j<=K; j++) {
-                System.out.printf("1: dp[%d][%d]=%d\n",i-1,j,dp[i-1][j]);
-				dp[i][j] = dp[i-1][j];     // 이전 행 결과 복사
-				System.out.printf("2: dp[%d][%d]=%d\n",i,j,dp[i][j]);
+				//System.out.printf("## dp[%d][%d]=%d \n", i,j, dp[i][j]);
+                dp[i][j] = dp[i-1][j];     // 이전 행 결과 복사
+				System.out.printf("## dp[%d][%d]=%d \n", i,j, dp[i][j]);
                 if(j - w[i]>=0) {    // 무게가 남으면
                     dp[i][j] = Math.max(dp[i][j], dp[i-1][j-w[i]]+v[i]); // 더 큰 값으로 갱신
-                }
+					System.out.printf("### dp[%d][%d]=%d \n", i,j, dp[i][j]);
+				}
             }
         }
         
@@ -62,3 +66,12 @@ public class Baekjoon_12865 {
     }
     
 }
+/*
+
+4 7
+6 13
+4 8
+3 6
+5 12
+
+*/

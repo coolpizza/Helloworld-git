@@ -42,7 +42,7 @@ public class Main {
     static int N = 11;
 	static int [][]a = new int[20][20];
 	
-    a[0][0]=1; 
+	//a[10][0]=1;    // 여기에서 바로 쓰면 에러 
 //	a[0][1]=4;
 	/*
     a[1][0]=3; a[1][1]=5;
@@ -58,6 +58,6 @@ public class Main {
     */
  
 	public static void main(String[] args) {
-
+		a[10][0]=1;  // 여기에서 써야 함.
 	}
 }
