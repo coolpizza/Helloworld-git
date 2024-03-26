@@ -1,10 +1,9 @@
 
 /*
 
+
 https://www.acmicpc.net/problem/2632
 https://moonsbeen.tistory.com/308
-https://blogshine.tistory.com/588
-https://ghqls0210.tistory.com/280?category=821398
 
 7
 5 3
@@ -16,11 +15,18 @@ https://ghqls0210.tistory.com/280?category=821398
 6
 8
 3
+
 -->
+
 5
 
+- 이제 A, B로 만들 수 있는 모든 피자조각의 경우의 수를 카운트 해 주었다.
+- 우리가 원하는 값은 size만큼 만들 수 있는 피자 조각의 경우의 수이다.
+- 그러므로 (0 ~ size) 만큼 탐색하여 
+  A, B 조각의 경우의 수의 합이 size가 되는 경우 각각의 경우의 수 끼리 곱한 값을 누적하면 원하는 답을 구할 수 있다. 
 
 */
+
 import java.util.*;
  
 public class Main {
