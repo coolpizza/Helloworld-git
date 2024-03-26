@@ -34,7 +34,7 @@ package Day2;
 
 import java.util.Scanner;
 
-public class Main_D2_2622_도약 {
+public class Main_D2_2622_leap {
 
 	private static int N;
 	private static int[] data;
@@ -86,27 +86,29 @@ public class Main_D2_2622_도약 {
 	
 	private static int getSolutionUsingLoop() {
 		int cnt = 0;
-		//int fDistance, sDistance;
+		int fDistance, sDistance;
 		int dist, distMin, distMax;
 		
 		for(int i=1; i<=N-2; i++) {
 			for(int j=i+1; j<=N-1; j++) {
-				//fDistance = data[j] - data[i];
+				fDistance = data[j] - data[i];
 				dist = data[j] - data[i];
 				for(int k=j+1; k<=N; k++) {
-//					sDistance = data[k] - data[j];
-//					if(fDistance > sDistance ) continue; // 이전 보다 적게 뛰거나
-//					if(fDistance*2 < sDistance) break; // 2배 이상 뛴 경우
-//					System.out.println(cnt+1+ " : " + data[i] + "," + data[j] + "," + data[k]);
-//					cnt++;
-					distMin = data[j] + dist;
-					distMax = distMin + dist;
-					if(data[k] >= distMin && data[k] <= distMax) {
-						cnt++;
-						System.out.printf("%5d : (%3d, %3d, %3d)", cnt, data[i], data[j], data[k]);
-						System.out.println();
-					}
-					if(data[k] > distMax) break;
+					sDistance = data[k] - data[j];
+					if(fDistance > sDistance ) continue; // 이전 보다 적게 뛰거나
+					if(fDistance*2 < sDistance) break; // 2배 이상 뛴 경우
+					System.out.println(cnt+1+ " : " + data[i] + "," + data[j] + "," + data[k]);
+					cnt++;
+
+
+//					distMin = data[j] + dist;
+//					distMax = distMin + dist;
+//					if(data[k] >= distMin && data[k] <= distMax) {
+//						cnt++;
+//						System.out.printf("%5d : (%3d, %3d, %3d)", cnt, data[i], data[j], data[k]);
+//						System.out.println();
+//					}
+//					if(data[k] > distMax) break;
 				}
 			}
 		}
@@ -176,8 +178,8 @@ public class Main_D2_2622_도약 {
 		simpleSort();
 //		simpleSort(1, N);
 //		simpleSort(1, N, data);
-//		System.out.println(getSolutionUsingLoop());
-		System.out.println(getSolutionUsingBS());
+		System.out.println(getSolutionUsingLoop());
+		//System.out.println(getSolutionUsingBS());
 		sc.close();
 	}
 
