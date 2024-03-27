@@ -52,7 +52,9 @@ public class Main {
 		}
 		sc.close();
 	}
-
+    
+    int enter_dfs_cnt=0;
+    int exit_dfs_cnt=0;	
 	
 /****	
 	void Dfs(int n, int r, int p, int cnt){
@@ -77,6 +79,7 @@ public class Main {
 
 // cnt --> 남겨야 하는 필터 갯수, N-cnt --> 제거해야 하는 필터 갯수
 	void Dfs(int s, int cnt, long mul, long sum) {
+		enter_dfs_cnt++;
 		System.out.printf("enter DFS --> s:%d, cnt:%d, mul:%d, sum:%d, iter:%d \n",s,cnt,mul,sum,totcal);
 		if (cnt !=0) {
 			
@@ -99,11 +102,15 @@ public class Main {
 			//System.out.println();
 			Dfs(i+1, cnt+1, mul*R[i], sum+P[i]);
 		}
+		exit_dfs_cnt++;
+		System.out.printf("Exit DFS --> s:%d, cnt:%d, mul:%d, sum:%d, iter:%d \n",s,cnt,mul,sum,totcal);
+
 	}
 	
 	int Solve() {
 		mindiff = (long)1e6;
 		Dfs(1,0,1,0);
+		System.out.printf("enter dfs:%d, exit dfs:%d \n", enter_dfs_cnt ,exit_dfs_cnt);
 		return N - mincnt;
 	}				
 	

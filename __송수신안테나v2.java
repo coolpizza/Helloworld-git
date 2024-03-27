@@ -21,22 +21,7 @@ public class Main {
 	
 	int stack[] = new int[100000 + 10];
 	int sp = 0;
-	void push(int h){
-		stack[++sp] = h;
-	}
-	void pop(){
-		sp--;
-		System.out.printf("pop \n");
-	}
-	int top(){
-		return stack[sp];
-	}
-	int size(){
-		return sp;
-	}
-	boolean empty(){
-		return sp == 0;
-	}
+
 	
 	void InputData(){
 		Scanner sc = new Scanner(System.in);
@@ -52,21 +37,24 @@ public class Main {
 		int i;
 		for (i = 0; i < N; i++){
 			System.out.println("-----------------------------------------------\n");
-			while (!empty() && (top() < H[i])){
-				cnt++;
-				pop();
+			for ( ;(sp>0) && (stack[sp] < H[i]);sp--,cnt++){
+				//cnt++;
+				//sp--;
 				System.out.printf("(1) H[%d]=%d, cnt=%d sp=%d\n", i, H[i], cnt, sp);
 				
 			}
-			if (!empty()) {
+			
+			if (sp>0) {
 				cnt++;
-				if (top() == H[i]) { 
-					pop();
+				if (stack[sp] == H[i]) { 
+					sp--;
 					System.out.printf("(4) H[%d]=%d \n",i, H[i]);
 				}
 				System.out.printf("(2) H[%d]=%d, cnt=%d sp=%d\n", i, H[i], cnt, sp);
 			}
-			push(H[i]);
+			
+			
+			stack[++sp] = H[i];
 			System.out.printf("(3) push H[%d]=%d, cnt=%d sp=%d\n", i, H[i], cnt, sp);
 			//System.out.println("-----------------------------------------------\n");
 		}

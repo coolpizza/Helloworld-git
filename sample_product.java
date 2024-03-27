@@ -1,0 +1,202 @@
+/*
+
+<input>
+6
+25 7
+26 1
+15 1
+22 3
+20 1
+30 1
+
+
+10
+1 4
+10 3
+9 2
+6 3
+8 3
+5 3
+2 2
+7 2
+3 3
+4 1
+
+25
+764 3
+783 2
+60 2
+369 3
+691 3
+427 5
+384 3
+422 2
+28 2
+212 1
+650 3
+568 4
+493 3
+336 2
+794 5
+927 6
+363 3
+916 5
+887 5
+387 1
+737 2
+541 1
+173 3
+430 5
+778 1
+
+<output>
+4
+
+3
+
+359
+
+*/
+
+
+import java.util.Scanner;
+import java.util.*;
+
+public class Main {
+	int N;//제품 수
+	
+	/*
+	public class st{
+		int X, ID;
+		st(int X, int ID){
+			this.X=X; this.ID=ID;
+		}
+	}
+	*/
+	
+	public class st implements Comparable <st> {
+		int X, ID;
+		st(int X, int ID){
+			this.X=X; this.ID=ID;
+		}
+		@Override
+		public int compareTo(st other) {
+			return this.X-other.X;
+		}
+		
+	}
+	
+	
+	st A[] = new st[50010];
+	
+	st tmp[] = new st[50010];
+	int nid[] = new int[50010];
+	int check[] = new int[50010];
+	int max_id_cnt;
+	
+
+	public void inputData()  {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		
+		for (int i = 0; i < N; i++) {
+			int X = sc.nextInt();
+			int ID = sc.nextInt();
+			A[i] = new st(X, ID);
+		}
+	}
+	
+	public void new_id(){
+		for(int i=0;i<N;i++){
+			int ni = A[i].ID % 50000;
+			for(int j=0;j<50000;j++){
+				System.out.printf("j:%d \n", j);
+				if(check[ni] == 0){
+					max_id_cnt++;
+					check[ni] = A[i].ID;
+					A[i].ID = ni;
+					break;
+				}
+				else if(check[ni] == A[i].ID){
+					A[i].ID = ni;
+					break;
+				}
+				ni = (ni + 1) % 50000;
+				System.out.printf("--> ni :%d \n", ni);
+			}
+			System.out.printf("# new id-> A[%d].ID :%d, ni :%d \n",i,A[i].ID, ni);
+		}
+	}
+	
+	/*
+6
+25 7
+26 1
+15 1
+22 3
+20 1
+30 1
+	
+	
+	*/
+	
+	public void sort(int s, int e){
+		if(s >= e) return;
+		int i=s,k=s,m=(s+e)/2, j=m+1;
+		sort(s, m); sort(j, e);
+		while((i<=m) && (j<=e)){
+			if(A[i].X > A[j].X) tmp[k++] = A[j++];
+			else tmp[k++] = A[i++];
+		}
+		while(i<=m) tmp[k++] = A[i++];
+		while(j<=e) tmp[k++] = A[j++];
+		for(i=s;i<=e;i++) A[i] = tmp[i];
+	}
+	
+	public int solve(){
+		int i, j, cnt = 0, min = Integer.MAX_VALUE;
+		
+		new_id();
+		
+		//sort(0, N-1);
+		Arrays.sort(A, 0, N);
+		for (i=0; i <N; i++) {
+			System.out.printf("## new id-> A[%d].ID :%d \n",i,A[i].ID);
+		}
+		for(i=0;i<50000;i++) check[i] = 0;
+		
+		i=j=0;
+		for(;;){
+			while((i<N) && (max_id_cnt > cnt)){
+				if(check[A[i].ID]++ == 0){ 
+				   cnt++;
+				   System.out.printf("##check[A[%d].ID] : %d \n", i, check[A[i].ID]);	
+				}
+				i++;
+				
+			}
+			System.out.println(" cnt : "+cnt);
+			
+			if(max_id_cnt != cnt) break;
+						
+			while(check[A[j].ID]>1){
+				check[A[j].ID]--; j++;
+			}
+			if(min > A[i-1].X - A[j].X) min = A[i-1].X - A[j].X;
+			cnt--; check[A[j].ID]=0; j++;
+		}
+		return min;
+	}
+
+	public static void main(String[] args){
+		Main m = new Main();
+		int ans = -1;
+
+		m.inputData();				//	입력 함수
+
+		//	코드를 작성하세요
+		ans = m.solve();
+	
+		System.out.println(ans);	//	정답 출력
+	}
+}
